@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Typography } from "@material-ui/core";
-import { Document, Page } from "react-pdf";
+import { Document, Page, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
 function Resume() {
@@ -16,10 +17,10 @@ function Resume() {
     <div>
       <Container>
         <Document 
-          file="src/assets/matthew_northmore_resume.pdf"
+          file={'src/matthew_northmore_resume.pdf'}
           onLoadSuccess={onDocumentLoadSuccess}
         >
-        <Page pageNumber={pageNumber} />
+        <Page pageNumber={pageNumber}/>
         </Document>
         <p>Page {pageNumber} of {numPages}</p>
       </Container>

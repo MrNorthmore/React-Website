@@ -66,8 +66,5 @@ function Contact() {
   );
 }
 
-function sendEmail() {
-
-}
 
 export default Contact;

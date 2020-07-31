@@ -9,14 +9,11 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import BuildIcon from "@material-ui/icons/Build";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
-import PanToolIcon from "@material-ui/icons/PanTool";
-import PublicIcon from "@material-ui/icons/Public";
 import DescriptionIcon from "@material-ui/icons/Description";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Switch, Route, Link } from "react-router-dom";
 
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -24,17 +21,15 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { createBrowserHistory } from "history";
 
 // Importing custom view components (pages)
-import Welcome from "./Welcome";
 import About from "./About";
 import Experience from "./Experience";
-import Blog from "./Blog";
 import Resume from "./Resume";
 import Contact from "./Contact";
 
 // Icon Imports
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { Fab, Container } from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import { common, blue } from "@material-ui/core/colors";
 
 const drawerWidth = 240;
@@ -102,42 +97,15 @@ function CustomDrawer(props) {
       <List>
         <ListItem button component={Link} to="/">
           <ListItemIcon>
-            <PanToolIcon />
-          </ListItemIcon>
-          <ListItemText primary="Welcome" />
-        </ListItem>
-        {/* <ListItem button component={Link} to="/about">
-          <ListItemIcon>
             <AssignmentIndIcon />
           </ListItemIcon>
           <ListItemText primary="About" />
-        </ListItem> */}
-        {/* <ListItem button component={Link} to="/experience">
+        </ListItem>
+        <ListItem button component={Link} to="/experience" >
           <ListItemIcon>
             <BuildIcon />
           </ListItemIcon>
           <ListItemText primary="Experience" />
-        </ListItem>
-        <ListItem button component={Link} to="/blog">
-          <ListItemIcon>
-            <PublicIcon />
-          </ListItemIcon>
-          <ListItemText primary="Blog" />
-        </ListItem> */}
-      </List>
-      <Divider />
-      <List>
-        {/* <ListItem button component={Link} to="/contact">
-          <ListItemIcon>
-            <MailIcon />
-          </ListItemIcon>
-          <ListItemText primary="Contact" />
-        </ListItem> */}
-        <ListItem button component={Link} to="/resume">
-          <ListItemIcon>
-            <DescriptionIcon />
-          </ListItemIcon>
-          <ListItemText primary="Resume" />
         </ListItem>
       </List>
       <Divider />
@@ -178,7 +146,7 @@ function CustomDrawer(props) {
           <Typography variant="h3" noWrap>
             Matthew Northmore |
           </Typography>
-          <Typography variant="subtitle3" noWrap>
+          <Typography variant="subtitle2" noWrap>
             Software Engineering Graduate, Life-long Technology Enthusiast
           </Typography>
         </Toolbar>
@@ -219,16 +187,10 @@ function CustomDrawer(props) {
           <div className={classes.toolbar} />
           <Switch>
             <Route exact path="/">
-              <Welcome />
-            </Route>
-            <Route path="/about">
               <About />
             </Route>
             <Route path="/experience">
               <Experience />
-            </Route>
-            <Route path="/Blog">
-              <Blog />
             </Route>
             <Route path="/contact">
               <Contact />

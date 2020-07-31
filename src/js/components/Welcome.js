@@ -1,19 +1,23 @@
 import React from "react";
-import { Container, Typography } from "@material-ui/core";
+import { Container, Typography, Card, CardContent, CardActions, Button } from "@material-ui/core";
 
 function Welcome() {
   return (
-    <div>
-      <Container>
-        <Typography paragraph>
+    <Card>
+      <CardContent>
+      <Typography paragraph>
           Welcome to my personal website (... a.k.a. Playground ) and portfolio
         </Typography>
         <Typography paragraph>
           Here you'll get a glimpse of my skills, experience and a direct
           contact to get in touch!
         </Typography>
-      </Container>
-    </div>
+      </CardContent>
+      <CardActions>
+        <Button>View Resume</Button>
+        <Button>Send Message</Button>
+      </CardActions>
+    </Card>
   );
 }
 
